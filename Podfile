@@ -10,5 +10,6 @@ pod 'Alamofire', '~> 4.4'
 pod 'SwiftyJSON'
 pod 'SVProgressHUD'
 pod 'SDWebImage'
+pod 'ColorThiefSwift'
 
 end
