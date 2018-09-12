@@ -1,0 +1,6 @@
+framework module Pods_flowerRecognitionCoreML {
+  umbrella header "Pods-flowerRecognitionCoreML-umbrella.h"
+
+  export *
+  module * { export * }
+}
