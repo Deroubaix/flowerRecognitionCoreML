@@ -15,8 +15,10 @@ import SDWebImage
 import SVProgressHUD
 import ColorThiefSwift
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
+  @IBOutlet weak var containerView: UIView!
+  @IBOutlet weak var backgroundImage: UIImageView!
   @IBOutlet weak var imageViewOutlet: UIImageView!
   @IBOutlet weak var label: UILabel!
   
@@ -26,22 +28,32 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+
     imagePicker.delegate = self
-    
+    backgroundImage.image = UIImage(named: "background")
+    let imageView = UIImageView(image: UIImage(named: "background"))
+    imageView.contentMode = .scaleAspectFill
+
   }
+  
   
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
     if let userPickedImage = info[.editedImage] as? UIImage {
       
       imagePicker.dismiss(animated: true, completion: nil)
-      
+  
       guard let ciImage = CIImage(image: userPickedImage) else {
         fatalError("Could not convert UIImage to CIImage")
       }
+      
+      pickedImage = userPickedImage
       detect(image: ciImage)
     }
+    
+    imagePicker.dismiss(animated: true, completion: nil)
+    
   }
+  
   
   func detect(image: CIImage) {
     
@@ -55,6 +67,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
       }
       self.navigationItem.title = classification.identifier.capitalized
       self.requestInfo(flowerName: classification.identifier)
+
       
     }
     
@@ -86,24 +99,26 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     Alamofire.request(wikipediaURl, method: .get, parameters: parameters).responseJSON { (response) in
       if response.result.isSuccess {
         
-        print(JSON(response.result.value!))
+//        print(JSON(response.result.value!))
         
         let flowerJSON : JSON = JSON(response.result.value!)
         let pageid = flowerJSON["query"]["pageids"][0].stringValue
         let flowerDescription = flowerJSON["query"]["pages"][pageid]["extract"].stringValue
         let flowerImageURL = flowerJSON["query"]["pages"][pageid]["thumbnail"]["source"].stringValue
         self.label.text = flowerDescription
+        
         self.imageViewOutlet.sd_setImage(with: URL(string: flowerImageURL), completed : {(image, error, cache, url) in
-        
         SVProgressHUD.dismiss()
-        
+          
         if let currentImage = self.imageViewOutlet.image {
+
           guard let dominantColor = ColorThief.getColor(from: currentImage) else {
             fatalError("Can't get dominant color from image")
           }
           DispatchQueue.main.async {
             self.navigationController?.navigationBar.isTranslucent = true
             self.navigationController?.navigationBar.barTintColor = dominantColor.makeUIColor()
+            
           }
         } else {
           self.imageViewOutlet.image = self.pickedImage
@@ -120,8 +135,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
   @IBAction func cameraPressed(_ sender: UIBarButtonItem) {
     
     imagePicker.allowsEditing = true
-    imagePicker.sourceType = .camera
+    imagePicker.sourceType = .photoLibrary
     present(imagePicker, animated: true, completion: nil)
   }
 }
+
+
 
