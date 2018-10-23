@@ -17,13 +17,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w9s-a7-SUC">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newBackground" translatesAutoresizingMaskIntoConstraints="NO" id="w9s-a7-SUC">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sVN-au-4rl" userLabel="Container View">
                                 <rect key="frame" x="0.0" y="334" width="375" height="333"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gxK-SI-oge">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Take a picture or pick an image on your photo library" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gxK-SI-oge">
                                         <rect key="frame" x="8" y="8" width="359" height="317"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -40,18 +40,15 @@
                             </view>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="w9s-a7-SUC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3bP-mK-WUS"/>
                             <constraint firstItem="sVN-au-4rl" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="4eA-3P-3ih"/>
-                            <constraint firstItem="w9s-a7-SUC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AxO-Gq-GX9"/>
-                            <constraint firstItem="w9s-a7-SUC" firstAttribute="bottom" secondItem="sVN-au-4rl" secondAttribute="bottom" id="I6F-F6-Oay"/>
-                            <constraint firstItem="w9s-a7-SUC" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="LZ0-Lv-Uf7"/>
+                            <constraint firstItem="w9s-a7-SUC" firstAttribute="bottom" secondItem="sVN-au-4rl" secondAttribute="bottom" id="R0h-ls-oPa"/>
+                            <constraint firstItem="w9s-a7-SUC" firstAttribute="leading" secondItem="sVN-au-4rl" secondAttribute="leading" id="TL4-kj-dPb"/>
                             <constraint firstItem="sVN-au-4rl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="270" id="YA0-TQ-A2J"/>
                             <constraint firstItem="sVN-au-4rl" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="fuZ-In-hVs"/>
-                            <constraint firstItem="w9s-a7-SUC" firstAttribute="leading" secondItem="sVN-au-4rl" secondAttribute="leading" id="kQt-ke-Mpu"/>
+                            <constraint firstItem="w9s-a7-SUC" firstAttribute="trailing" secondItem="sVN-au-4rl" secondAttribute="trailing" id="iWU-BH-xhY"/>
                             <constraint firstItem="sVN-au-4rl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="lad-2U-KmR"/>
-                            <constraint firstItem="w9s-a7-SUC" firstAttribute="trailing" secondItem="sVN-au-4rl" secondAttribute="trailing" id="n5r-tz-PVU"/>
                             <constraint firstItem="sVN-au-4rl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="onV-yL-0IC"/>
-                            <constraint firstItem="w9s-a7-SUC" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="tmr-YC-73g"/>
+                            <constraint firstItem="w9s-a7-SUC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="q34-Dt-x4z"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -71,16 +68,17 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="957.60000000000002" y="-565.36731634182911"/>
+            <point key="canvasLocation" x="1941.5999999999999" y="-584.25787106446785"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="U4A-B5-eIe">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kHS-Ie-GbQ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" alpha="0.84999999999999998" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="YDr-ZU-958">
+                    <navigationBar key="navigationBar" alpha="0.84999999999999998" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YDr-ZU-958">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.12265240786301834" green="0.40248255076142136" blue="0.11858807254694287" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -91,12 +89,15 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="oOe-NZ-4cO"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="aMg-6g-Q8G"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BIH-zx-jGH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="85.599999999999994" y="-564.46776611694156"/>
+            <point key="canvasLocation" x="740" y="-584"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="newBackground" width="668" height="1002"/>
+    </resources>
 </document>
