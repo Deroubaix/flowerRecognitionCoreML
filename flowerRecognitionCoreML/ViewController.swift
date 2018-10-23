@@ -16,12 +16,12 @@ import SVProgressHUD
 import ColorThiefSwift
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-
+  
   @IBOutlet weak var containerView: UIView!
   @IBOutlet weak var backgroundImage: UIImageView!
   @IBOutlet weak var imageViewOutlet: UIImageView!
-  @IBOutlet weak var label: UILabel!
   @IBOutlet weak var flowerDescriptionTextView: UITextView!
+  @IBOutlet weak var cameraButton: UIBarButtonItem!
   
   let wikipediaURl = "https://en.wikipedia.org/w/api.php"
   let imagePicker = UIImagePickerController()
@@ -29,20 +29,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
   
   override func viewDidLoad() {
     super.viewDidLoad()
-
-    imagePicker.delegate = self
-//    backgroundImage.image = UIImage(named: "background")
-//    let imageView = UIImageView(image: UIImage(named: "background"))
-//    imageView.contentMode = .scaleAspectFill
-
+//    imagePicker.delegate = self
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
   }
   
   
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-    if let userPickedImage = info[.editedImage] as? UIImage {
+    if let userPickedImage = info[.originalImage] as? UIImage {
       
       imagePicker.dismiss(animated: true, completion: nil)
-  
+      
       guard let ciImage = CIImage(image: userPickedImage) else {
         fatalError("Could not convert UIImage to CIImage")
       }
@@ -68,8 +67,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
       }
       self.navigationItem.title = classification.identifier.capitalized
       self.requestInfo(flowerName: classification.identifier)
-
-      
     }
     
     let handler = VNImageRequestHandler(ciImage: image)
@@ -95,12 +92,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
       "indexpageids" : "",
       "redirects" : "1",
       "pithumbsize" : "500"
-      ]
+    ]
     
     Alamofire.request(wikipediaURl, method: .get, parameters: parameters).responseJSON { (response) in
       if response.result.isSuccess {
         
-//        print(JSON(response.result.value!))
+        //        print(JSON(response.result.value!))
         
         let flowerJSON : JSON = JSON(response.result.value!)
         let pageid = flowerJSON["query"]["pageids"][0].stringValue
@@ -109,37 +106,44 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.flowerDescriptionTextView.text = flowerDescription
         
         self.imageViewOutlet.sd_setImage(with: URL(string: flowerImageURL), completed : {(image, error, cache, url) in
-        SVProgressHUD.dismiss()
+          SVProgressHUD.dismiss()
           
-        if let currentImage = self.imageViewOutlet.image {
-
-          guard let dominantColor = ColorThief.getColor(from: currentImage) else {
-            fatalError("Can't get dominant color from image")
-          }
-          DispatchQueue.main.async {
-            self.navigationController?.navigationBar.isTranslucent = true
-            self.navigationController?.navigationBar.barTintColor = dominantColor.makeUIColor()
+          if let currentImage = self.imageViewOutlet.image {
             
+            guard let dominantColor = ColorThief.getColor(from: currentImage) else {
+              fatalError("Can't get dominant color from image")
+            }
+            DispatchQueue.main.async {
+              self.navigationController?.navigationBar.isTranslucent = true
+              self.navigationController?.navigationBar.barTintColor = dominantColor.makeUIColor()
+            }
+          } else {
+            self.imageViewOutlet.image = self.pickedImage
+            self.flowerDescriptionTextView.text = "Could not get info from Wikipedia."
           }
-        } else {
-          self.imageViewOutlet.image = self.pickedImage
-//          self.label.text = "Could not get info from Wikipedia."
-          self.flowerDescriptionTextView.text = "Could not get info from Wikipedia."
-        }
-       })
+        })
       } else {
-//        self.label.text = "Connection Issues."
         self.flowerDescriptionTextView.text = "Connection Issues."
       }
     }
   }
-
-
-  @IBAction func cameraPressed(_ sender: UIBarButtonItem) {
-    
-    imagePicker.allowsEditing = true
-    imagePicker.sourceType = .photoLibrary
+  
+  func sourceTypePicked(source: UIImagePickerController.SourceType) {
+    //    let imagePicker = UIImagePickerController()
+    imagePicker.delegate = self
+    imagePicker.sourceType = source
     present(imagePicker, animated: true, completion: nil)
+  }
+  
+  @IBAction func albumPressed(_ sender: UIBarButtonItem) {
+    imagePicker.allowsEditing = true
+    sourceTypePicked(source: .photoLibrary)
+  }
+  
+  @IBAction func cameraPressed(_ sender: UIBarButtonItem) {
+    imagePicker.allowsEditing = true
+    sourceTypePicked(source: .camera)
+//    present(imagePicker, animated: true, completion: nil)
   }
 }
 
