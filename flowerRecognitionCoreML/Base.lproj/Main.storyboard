@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kHS-Ie-GbQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.15" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kHS-Ie-GbQ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.9"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.9"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,59 +17,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JX7-8m-8ge">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flower Recognition" textAlignment="center" lineBreakMode="clip" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="DO1-aq-t53">
-                                <rect key="frame" x="0.0" y="342" width="375" height="48.5"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="40"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w9s-a7-SUC">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sVN-au-4rl" userLabel="Container View">
                                 <rect key="frame" x="0.0" y="334" width="375" height="333"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="arY-I9-CA2">
-                                        <rect key="frame" x="8" y="10" width="359" height="319.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="319.5" id="TZ7-tx-X3P"/>
-                                            <constraint firstAttribute="width" constant="359" id="eZz-3J-igO"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gxK-SI-oge">
+                                        <rect key="frame" x="8" y="8" width="359" height="317"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="arY-I9-CA2" firstAttribute="leading" secondItem="sVN-au-4rl" secondAttribute="leading" constant="8" id="H4M-rZ-3tz"/>
-                                    <constraint firstItem="arY-I9-CA2" firstAttribute="top" secondItem="sVN-au-4rl" secondAttribute="top" constant="10" id="ONT-mv-QMB"/>
-                                    <constraint firstAttribute="trailing" secondItem="arY-I9-CA2" secondAttribute="trailing" constant="8" id="cB5-ZG-UBN"/>
-                                    <constraint firstAttribute="bottom" secondItem="arY-I9-CA2" secondAttribute="bottom" constant="3.5" id="q2v-lq-0Tf"/>
+                                    <constraint firstAttribute="bottom" secondItem="gxK-SI-oge" secondAttribute="bottom" constant="8" id="GiD-9P-hx9"/>
+                                    <constraint firstAttribute="trailing" secondItem="gxK-SI-oge" secondAttribute="trailing" constant="8" id="dPw-gy-UiW"/>
+                                    <constraint firstItem="gxK-SI-oge" firstAttribute="leading" secondItem="sVN-au-4rl" secondAttribute="leading" constant="8" id="fNV-oU-b35"/>
+                                    <constraint firstItem="gxK-SI-oge" firstAttribute="top" secondItem="sVN-au-4rl" secondAttribute="top" constant="8" id="z8o-76-bZX"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="w9s-a7-SUC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3bP-mK-WUS"/>
+                            <constraint firstItem="sVN-au-4rl" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="4eA-3P-3ih"/>
                             <constraint firstItem="w9s-a7-SUC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AxO-Gq-GX9"/>
-                            <constraint firstItem="DO1-aq-t53" firstAttribute="width" secondItem="JX7-8m-8ge" secondAttribute="width" id="ECs-ei-Q2F"/>
                             <constraint firstItem="w9s-a7-SUC" firstAttribute="bottom" secondItem="sVN-au-4rl" secondAttribute="bottom" id="I6F-F6-Oay"/>
                             <constraint firstItem="w9s-a7-SUC" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="LZ0-Lv-Uf7"/>
-                            <constraint firstItem="JX7-8m-8ge" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="LhX-mw-sg9"/>
-                            <constraint firstItem="JX7-8m-8ge" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="baZ-Df-cb0"/>
+                            <constraint firstItem="sVN-au-4rl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="270" id="YA0-TQ-A2J"/>
                             <constraint firstItem="sVN-au-4rl" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="fuZ-In-hVs"/>
-                            <constraint firstItem="DO1-aq-t53" firstAttribute="centerX" secondItem="JX7-8m-8ge" secondAttribute="centerX" id="jeM-mg-eT3"/>
                             <constraint firstItem="w9s-a7-SUC" firstAttribute="leading" secondItem="sVN-au-4rl" secondAttribute="leading" id="kQt-ke-Mpu"/>
+                            <constraint firstItem="sVN-au-4rl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="lad-2U-KmR"/>
                             <constraint firstItem="w9s-a7-SUC" firstAttribute="trailing" secondItem="sVN-au-4rl" secondAttribute="trailing" id="n5r-tz-PVU"/>
-                            <constraint firstItem="JX7-8m-8ge" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="rSK-6A-fjE"/>
+                            <constraint firstItem="sVN-au-4rl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="onV-yL-0IC"/>
                             <constraint firstItem="w9s-a7-SUC" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="tmr-YC-73g"/>
-                            <constraint firstItem="JX7-8m-8ge" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wLp-W2-vwx"/>
-                            <constraint firstItem="DO1-aq-t53" firstAttribute="top" secondItem="JX7-8m-8ge" secondAttribute="bottom" constant="-325" id="yEv-vY-4KT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -82,10 +64,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="backgroundImage" destination="JX7-8m-8ge" id="5cS-hL-gGM"/>
                         <outlet property="containerView" destination="sVN-au-4rl" id="Sai-An-KIg"/>
+                        <outlet property="flowerDescriptionTextView" destination="gxK-SI-oge" id="2BZ-fX-XKE"/>
                         <outlet property="imageViewOutlet" destination="w9s-a7-SUC" id="bri-9c-Dsk"/>
-                        <outlet property="label" destination="arY-I9-CA2" id="crr-u4-KXS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -97,10 +78,9 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kHS-Ie-GbQ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" alpha="0.55000000000000004" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="YDr-ZU-958">
+                    <navigationBar key="navigationBar" alpha="0.84999999999999998" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="YDr-ZU-958">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

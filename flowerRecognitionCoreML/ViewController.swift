@@ -21,6 +21,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
   @IBOutlet weak var backgroundImage: UIImageView!
   @IBOutlet weak var imageViewOutlet: UIImageView!
   @IBOutlet weak var label: UILabel!
+  @IBOutlet weak var flowerDescriptionTextView: UITextView!
   
   let wikipediaURl = "https://en.wikipedia.org/w/api.php"
   let imagePicker = UIImagePickerController()
@@ -30,9 +31,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     super.viewDidLoad()
 
     imagePicker.delegate = self
-    backgroundImage.image = UIImage(named: "background")
-    let imageView = UIImageView(image: UIImage(named: "background"))
-    imageView.contentMode = .scaleAspectFill
+//    backgroundImage.image = UIImage(named: "background")
+//    let imageView = UIImageView(image: UIImage(named: "background"))
+//    imageView.contentMode = .scaleAspectFill
 
   }
   
@@ -105,7 +106,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let pageid = flowerJSON["query"]["pageids"][0].stringValue
         let flowerDescription = flowerJSON["query"]["pages"][pageid]["extract"].stringValue
         let flowerImageURL = flowerJSON["query"]["pages"][pageid]["thumbnail"]["source"].stringValue
-        self.label.text = flowerDescription
+        self.flowerDescriptionTextView.text = flowerDescription
         
         self.imageViewOutlet.sd_setImage(with: URL(string: flowerImageURL), completed : {(image, error, cache, url) in
         SVProgressHUD.dismiss()
@@ -122,11 +123,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
           }
         } else {
           self.imageViewOutlet.image = self.pickedImage
-          self.label.text = "Could not get info from Wikipedia."
+//          self.label.text = "Could not get info from Wikipedia."
+          self.flowerDescriptionTextView.text = "Could not get info from Wikipedia."
         }
        })
       } else {
-        self.label.text = "Connection Issues."
+//        self.label.text = "Connection Issues."
+        self.flowerDescriptionTextView.text = "Connection Issues."
       }
     }
   }
@@ -135,7 +138,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
   @IBAction func cameraPressed(_ sender: UIBarButtonItem) {
     
     imagePicker.allowsEditing = true
-    imagePicker.sourceType = .camera
+    imagePicker.sourceType = .photoLibrary
     present(imagePicker, animated: true, completion: nil)
   }
 }
