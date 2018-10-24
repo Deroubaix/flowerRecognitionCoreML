@@ -18,7 +18,6 @@ import ColorThiefSwift
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
   
   @IBOutlet weak var containerView: UIView!
-  @IBOutlet weak var backgroundImage: UIImageView!
   @IBOutlet weak var imageViewOutlet: UIImageView!
   @IBOutlet weak var flowerDescriptionTextView: UITextView!
   @IBOutlet weak var cameraButton: UIBarButtonItem!
