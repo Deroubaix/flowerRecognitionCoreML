@@ -22,6 +22,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
   @IBOutlet weak var imageViewOutlet: UIImageView!
   @IBOutlet weak var flowerDescriptionTextView: UITextView!
   @IBOutlet weak var cameraButton: UIBarButtonItem!
+  @IBOutlet weak var toolBar: UIToolbar!
   
   let wikipediaURl = "https://en.wikipedia.org/w/api.php"
   let imagePicker = UIImagePickerController()
@@ -116,6 +117,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             DispatchQueue.main.async {
               self.navigationController?.navigationBar.isTranslucent = true
               self.navigationController?.navigationBar.barTintColor = dominantColor.makeUIColor()
+              self.toolBar.barTintColor = dominantColor.makeUIColor()
+              self.toolBar.isTranslucent = true
             }
           } else {
             self.imageViewOutlet.image = self.pickedImage
@@ -143,7 +146,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
   @IBAction func cameraPressed(_ sender: UIBarButtonItem) {
     imagePicker.allowsEditing = true
     sourceTypePicked(source: .camera)
-//    present(imagePicker, animated: true, completion: nil)
   }
 }
 

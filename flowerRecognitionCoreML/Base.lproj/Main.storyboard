@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.15" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kHS-Ie-GbQ">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -9,81 +9,85 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Flower Recognition-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="flowerRecognitionCoreML" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="w9s-a7-SUC">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sVN-au-4rl" userLabel="Container View">
-                                <rect key="frame" x="0.0" y="334" width="375" height="333"/>
+                                <rect key="frame" x="0.0" y="499" width="375" height="230"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Take a picture or pick an image on your photo library" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gxK-SI-oge">
-                                        <rect key="frame" x="8" y="8" width="359" height="317"/>
+                                        <rect key="frame" x="8" y="8" width="359" height="214"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c2c-KI-zsy">
-                                        <rect key="frame" x="0.0" y="289" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                        <items>
-                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="554-Qi-a3a"/>
-                                            <barButtonItem title="Album" id="CzU-ne-OJF">
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <connections>
-                                                    <action selector="albumPressed:" destination="BYZ-38-t0r" id="dP2-1y-yU8"/>
-                                                </connections>
-                                            </barButtonItem>
-                                            <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="CMs-X1-5B9"/>
-                                            <barButtonItem systemItem="camera" id="AGm-0k-bwR">
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <connections>
-                                                    <action selector="cameraPressed:" destination="BYZ-38-t0r" id="ahR-65-g7W"/>
-                                                </connections>
-                                            </barButtonItem>
-                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="JnB-Vj-R4K"/>
-                                        </items>
-                                    </toolbar>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="gxK-SI-oge" secondAttribute="bottom" constant="8" id="GiD-9P-hx9"/>
-                                    <constraint firstAttribute="trailing" secondItem="gxK-SI-oge" secondAttribute="trailing" constant="8" id="dPw-gy-UiW"/>
-                                    <constraint firstItem="gxK-SI-oge" firstAttribute="leading" secondItem="sVN-au-4rl" secondAttribute="leading" constant="8" id="fNV-oU-b35"/>
-                                    <constraint firstItem="gxK-SI-oge" firstAttribute="top" secondItem="sVN-au-4rl" secondAttribute="top" constant="8" id="z8o-76-bZX"/>
+                                    <constraint firstItem="gxK-SI-oge" firstAttribute="top" secondItem="sVN-au-4rl" secondAttribute="top" constant="8" id="1ZS-17-7U6"/>
+                                    <constraint firstAttribute="height" constant="230" id="A5p-fY-7S7"/>
+                                    <constraint firstItem="gxK-SI-oge" firstAttribute="centerY" secondItem="sVN-au-4rl" secondAttribute="centerY" id="FCd-eA-LHy"/>
+                                    <constraint firstAttribute="trailing" secondItem="gxK-SI-oge" secondAttribute="trailing" constant="8" id="Rse-LW-7NI"/>
+                                    <constraint firstItem="gxK-SI-oge" firstAttribute="leading" secondItem="sVN-au-4rl" secondAttribute="leading" constant="8" id="WXg-Bw-HPk"/>
+                                    <constraint firstItem="gxK-SI-oge" firstAttribute="centerX" secondItem="sVN-au-4rl" secondAttribute="centerX" id="lkA-e5-lm2"/>
+                                    <constraint firstAttribute="bottom" secondItem="gxK-SI-oge" secondAttribute="bottom" constant="8" id="mL0-Z0-W18"/>
                                 </constraints>
                             </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c2c-KI-zsy">
+                                <rect key="frame" x="0.0" y="729" width="375" height="49"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="554-Qi-a3a"/>
+                                    <barButtonItem title="Album" id="CzU-ne-OJF">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="albumPressed:" destination="BYZ-38-t0r" id="dP2-1y-yU8"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="CMs-X1-5B9"/>
+                                    <barButtonItem systemItem="camera" id="AGm-0k-bwR">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="cameraPressed:" destination="BYZ-38-t0r" id="ahR-65-g7W"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="JnB-Vj-R4K"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="sVN-au-4rl" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="4eA-3P-3ih"/>
-                            <constraint firstItem="w9s-a7-SUC" firstAttribute="bottom" secondItem="sVN-au-4rl" secondAttribute="bottom" id="R0h-ls-oPa"/>
-                            <constraint firstItem="w9s-a7-SUC" firstAttribute="leading" secondItem="sVN-au-4rl" secondAttribute="leading" id="TL4-kj-dPb"/>
-                            <constraint firstItem="sVN-au-4rl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="270" id="YA0-TQ-A2J"/>
-                            <constraint firstItem="sVN-au-4rl" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="fuZ-In-hVs"/>
-                            <constraint firstItem="w9s-a7-SUC" firstAttribute="trailing" secondItem="sVN-au-4rl" secondAttribute="trailing" id="iWU-BH-xhY"/>
-                            <constraint firstItem="sVN-au-4rl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="lad-2U-KmR"/>
-                            <constraint firstItem="sVN-au-4rl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="onV-yL-0IC"/>
-                            <constraint firstItem="w9s-a7-SUC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="q34-Dt-x4z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="c2c-KI-zsy" secondAttribute="trailing" id="CbI-dI-HGN"/>
+                            <constraint firstItem="sVN-au-4rl" firstAttribute="leading" secondItem="w9s-a7-SUC" secondAttribute="leading" id="DMg-d8-6ip"/>
+                            <constraint firstItem="c2c-KI-zsy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Kfs-WU-Aic"/>
+                            <constraint firstItem="w9s-a7-SUC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OrP-tE-uq4"/>
+                            <constraint firstItem="w9s-a7-SUC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="XQp-ZJ-6D9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="c2c-KI-zsy" secondAttribute="bottom" id="XYW-MT-wZp"/>
+                            <constraint firstItem="sVN-au-4rl" firstAttribute="trailing" secondItem="w9s-a7-SUC" secondAttribute="trailing" id="YgE-hG-Ibk"/>
+                            <constraint firstAttribute="bottom" secondItem="w9s-a7-SUC" secondAttribute="bottom" id="YlA-ib-Vf4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="w9s-a7-SUC" secondAttribute="trailing" id="pGP-fq-QOO"/>
+                            <constraint firstItem="c2c-KI-zsy" firstAttribute="top" secondItem="sVN-au-4rl" secondAttribute="bottom" id="qcZ-Yg-K4p"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="cxe-YD-0Qk"/>
+                    <navigationItem key="navigationItem" title="Flower Recognition" id="cxe-YD-0Qk"/>
                     <connections>
                         <outlet property="cameraButton" destination="AGm-0k-bwR" id="sWL-3F-uyu"/>
                         <outlet property="containerView" destination="sVN-au-4rl" id="Sai-An-KIg"/>
                         <outlet property="flowerDescriptionTextView" destination="gxK-SI-oge" id="2BZ-fX-XKE"/>
                         <outlet property="imageViewOutlet" destination="w9s-a7-SUC" id="bri-9c-Dsk"/>
+                        <outlet property="toolBar" destination="c2c-KI-zsy" id="YnV-sh-L0V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1941.5999999999999" y="-584.25787106446785"/>
+            <point key="canvasLocation" x="1933.5999999999999" y="-587.85607196401804"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="U4A-B5-eIe">
@@ -91,7 +95,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kHS-Ie-GbQ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" alpha="0.84999999999999998" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YDr-ZU-958">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.12265240786301834" green="0.40248255076142136" blue="0.11858807254694287" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">

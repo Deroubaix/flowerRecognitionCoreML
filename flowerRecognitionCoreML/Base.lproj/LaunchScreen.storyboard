@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.15" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina3_5" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -14,45 +14,25 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="Wyd-Q8-8cz">
-                                <rect key="frame" x="31" y="91.5" width="258" height="297.5"/>
+                                <rect key="frame" x="31" y="124" width="258" height="48"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flower Recognition" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="yeP-W6-IOh">
-                                        <rect key="frame" x="0.0" y="0.0" width="258" height="47.5"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="40"/>
-                                        <color key="textColor" red="0.49585414300000002" green="0.45319061329999999" blue="0.69243734130000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FlowerRecognition" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="yeP-W6-IOh">
+                                        <rect key="frame" x="0.0" y="0.0" width="258" height="48"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ok-LN-cJv">
-                                        <rect key="frame" x="54" y="147.5" width="150" height="150"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clematis" translatesAutoresizingMaskIntoConstraints="NO" id="fb9-TT-bRT">
-                                                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="150" id="SFr-8h-8HJ"/>
-                                                    <constraint firstAttribute="height" constant="150" id="eXp-2Y-QYv"/>
-                                                </constraints>
-                                            </imageView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="fb9-TT-bRT" secondAttribute="bottom" id="P8v-QV-53u"/>
-                                            <constraint firstAttribute="trailing" secondItem="fb9-TT-bRT" secondAttribute="trailing" id="aCj-oJ-2qV"/>
-                                            <constraint firstItem="fb9-TT-bRT" firstAttribute="leading" secondItem="2ok-LN-cJv" secondAttribute="leading" id="eyV-wA-3Q1"/>
-                                            <constraint firstItem="fb9-TT-bRT" firstAttribute="top" secondItem="2ok-LN-cJv" secondAttribute="top" id="eyh-m2-3tB"/>
-                                        </constraints>
-                                    </view>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.78449736812638082" green="0.99824459331036719" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Wyd-Q8-8cz" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="8p1-3X-mSm"/>
-                            <constraint firstItem="Wyd-Q8-8cz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="31" id="CiV-rd-Gvv"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Wyd-Q8-8cz" secondAttribute="trailing" constant="31" id="gVL-lG-VIw"/>
-                            <constraint firstItem="Wyd-Q8-8cz" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="nuO-e1-PDU"/>
+                            <constraint firstItem="Wyd-Q8-8cz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="31" id="R7O-cs-Kem"/>
+                            <constraint firstItem="Wyd-Q8-8cz" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="WkU-uu-e5u"/>
+                            <constraint firstItem="Wyd-Q8-8cz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="104" id="ZJB-AW-W3X"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -62,7 +42,4 @@
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="clematis" width="400.69564819335938" height="400.69564819335938"/>
-    </resources>
 </document>
