@@ -28,10 +28,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
   let imagePicker = UIImagePickerController()
   var pickedImage : UIImage!
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
-//    imagePicker.delegate = self
-  }
   
   override func viewWillAppear(_ animated: Bool) {
     cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
@@ -132,7 +128,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
   }
   
   func sourceTypePicked(source: UIImagePickerController.SourceType) {
-    //    let imagePicker = UIImagePickerController()
     imagePicker.delegate = self
     imagePicker.sourceType = source
     present(imagePicker, animated: true, completion: nil)
